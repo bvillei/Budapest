@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Place } from '../place';
-import { PLACES } from '../mock-place';
+import {Component, OnInit} from '@angular/core';
+import {Place} from '../place';
+import {PlaceService} from '../place.service';
 
 @Component({
   selector: 'app-places',
@@ -9,15 +9,24 @@ import { PLACES } from '../mock-place';
 })
 export class PlacesComponent implements OnInit {
 
-  places = PLACES;
+  places: Place[];
 
   selectedPlace: Place;
+
   onSelect(place: Place): void {
     this.selectedPlace = place;
   }
-  constructor() { }
+
+  constructor(private placeService: PlaceService) {
+  }
+
+  getPlaces(): void {
+    this.placeService.getPlaces()
+      .subscribe(places => this.places = places);
+  }
 
   ngOnInit() {
+    this.getPlaces();
   }
 
 }
