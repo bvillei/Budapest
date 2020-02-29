@@ -1,4 +1,5 @@
 <h2>My Places</h2>
+
 <ul class="places">
   <li *ngFor="let place of places"
       [class.selected]="place === selectedPlace"
@@ -7,9 +8,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedPlace">
-  <h2>{{selectedPlace.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedPlace.id}}</div>
-  <div><span>name: </span>{{selectedPlace.name}}</div>
-  <div><span>description: </span>{{selectedPlace.description}}</div>
-</div>
+<app-place-detail [place]="selectedPlace"></app-place-detail>

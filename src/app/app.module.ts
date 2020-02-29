@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PlacesComponent } from './places/places.component';
+import { PlaceDetailComponent } from './place-detail/place-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlacesComponent
+    PlacesComponent,
+    PlaceDetailComponent
   ],
   imports: [
     BrowserModule
