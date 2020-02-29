@@ -1,13 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { PlacesComponent } from './places/places.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {PlacesComponent} from './places/places.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'places', component: PlacesComponent }
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  {path: 'places', component: PlacesComponent},
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

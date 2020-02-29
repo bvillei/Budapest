@@ -6,13 +6,15 @@ import { PlacesComponent } from './places/places.component';
 import { PlaceDetailComponent } from './place-detail/place-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlacesComponent,
     PlaceDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
