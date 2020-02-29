@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Place } from '../place';
+import { PLACES } from '../mock-place';
 
 @Component({
   selector: 'app-places',
@@ -8,11 +9,12 @@ import { Place } from '../place';
 })
 export class PlacesComponent implements OnInit {
 
-  place: Place = {
-    id: 1,
-    name: 'Castle'
-  };
+  places = PLACES;
 
+  selectedPlace: Place;
+  onSelect(place: Place): void {
+    this.selectedPlace = place;
+  }
   constructor() { }
 
   ngOnInit() {
