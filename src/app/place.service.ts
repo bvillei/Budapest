@@ -9,7 +9,6 @@ import {MessageService} from './message.service';
 })
 export class PlaceService {
   getPlaces(): Observable<Place[]> {
-    // TODO: send the message _after_ fetching the heroes
     this.messageService.add('PlaceService: fetched places');
     return of(PLACES);
   }

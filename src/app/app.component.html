@@ -1,6 +1,9 @@
 <div class="content" role="main">
   <h1>{{ title }} Guide</h1>
-  <app-places></app-places>
+  <nav>
+    <a routerLink="/places">Places</a>
+  </nav>
+  <router-outlet></router-outlet>
   <app-messages></app-messages>
 
   <footer>
