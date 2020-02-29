@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+
 import {Place} from '../place';
 import {PlaceService} from '../place.service';
+import {MessageService} from '../message.service';
 
 @Component({
   selector: 'app-places',
@@ -13,20 +15,20 @@ export class PlacesComponent implements OnInit {
 
   selectedPlace: Place;
 
-  onSelect(place: Place): void {
-    this.selectedPlace = place;
-  }
-
-  constructor(private placeService: PlaceService) {
-  }
-
-  getPlaces(): void {
-    this.placeService.getPlaces()
-      .subscribe(places => this.places = places);
+  constructor(private placeService: PlaceService, private messageService: MessageService) {
   }
 
   ngOnInit() {
     this.getPlaces();
   }
 
+  onSelect(place: Place): void {
+    this.selectedPlace = place;
+    this.messageService.add(`PlaceService: Selected place id=${place.id}`);
+  }
+
+  getPlaces(): void {
+    this.placeService.getPlaces()
+      .subscribe(places => this.places = places);
+  }
 }
