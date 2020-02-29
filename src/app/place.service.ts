@@ -8,11 +8,17 @@ import {MessageService} from './message.service';
   providedIn: 'root'
 })
 export class PlaceService {
+  constructor(private messageService: MessageService) {
+  }
+
   getPlaces(): Observable<Place[]> {
     this.messageService.add('PlaceService: fetched places');
     return of(PLACES);
   }
 
-  constructor(private messageService: MessageService) {
+  getPlace(id: number): Observable<Place> {
+    this.messageService.add(`PlaceService: fetched place id=${id}`);
+    return of(PLACES.find(place => place.id === id));
   }
+
 }
