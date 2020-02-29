@@ -18,6 +18,6 @@ export class DashboardComponent implements OnInit {
 
   getPlaces(): void {
     this.placeService.getPlaces()
-      .subscribe(places => this.places = places.slice(1, 5));
+      .subscribe(places => this.places = places.slice(0, 3));
   }
 }

@@ -1,5 +1,7 @@
 <h2>My Places</h2>
 
+<app-place-search></app-place-search>
+
 <ul class="places">
   <li *ngFor="let place of places">
     <a routerLink="/detail/{{place.id}}">
